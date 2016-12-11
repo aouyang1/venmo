@@ -1,0 +1,15 @@
+############################################################
+# Dockerfile to build venmo monster produciton container image
+# Based on alpine
+############################################################
+FROM venmo-monster
+
+MAINTAINER Austin Ouyang
+
+ENV APPDIR=/root/venmo-monster
+
+COPY . $APPDIR
+
+WORKDIR $APPDIR
+
+CMD [ "python3", "venmo.py", "run" ]
