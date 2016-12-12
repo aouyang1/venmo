@@ -34,7 +34,7 @@ spec:
             secretKeyRef:
               name: fellow-aws-secret
               key: awssecretaccesskey
-        - name: VENMO_S3_BUCKET
+        - name: S3_BUCKET
           valueFrom:
             secretKeyRef:
               name: venmo-s3-bucket
