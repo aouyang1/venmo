@@ -24,7 +24,7 @@ peg scp to-rem ${CLUSTER_NAME} 1 venmo-json2parquet.py /home/ubuntu/
 echo "Sleep for 10 seconds to wait for all Spark Workers"
 sleep 10
 
-peg sshcmd-node ${CLUSTER_NAME} 1 ". ~/.profile; cd /home/ubuntu; ./run.sh"
+peg sshcmd-node ${CLUSTER_NAME} 1 "cd /home/ubuntu; ./run.sh"
 
 echo "Waiting for files to settle on S3 before shutting down"
 sleep 10
