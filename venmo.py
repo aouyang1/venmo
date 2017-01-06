@@ -12,11 +12,12 @@ from datetime import datetime, timedelta
 from pprint import pprint
 import boto3
 
-FORMAT = '[%(asctime)-15s] %(message)s'
+FORMAT = '[%(asctime)-15s] - %(name)s - %(levelname)s - %(message)s'
 
-logging.basicConfig(format=FORMAT)
-logger = logging.getLogger()
-logger.setLevel('INFO')
+logging.basicConfig(format=FORMAT,
+                    filename="/var/tmp/service.log",
+                    level=logging.INFO)
+logger = logging.getLogger('venmomonster')
 
 sess = requests.Session()
 retries = Retry(total=5, backoff_factor=2.0)
