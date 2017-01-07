@@ -24,6 +24,8 @@ spec:
             cpu: 100m
             memory: 200Mi
         env:
+        - name: LOG_DIR
+          value: "/var/log/venmo-monster"
         - name: AWS_ACCESS_KEY_ID
           valueFrom:
             secretKeyRef:

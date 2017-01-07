@@ -14,7 +14,7 @@ import boto3
 
 FORMAT = '[%(asctime)-15s] - %(name)s - %(levelname)s - %(message)s'
 
-LOG_DIR = "/var/log/venmo-monster"
+LOG_DIR = os.environ["LOG_DIR"]
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
 
