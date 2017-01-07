@@ -17,3 +17,6 @@ except:
 sqlCtx.read.json(JSON_INPUT, schema=schema)\
            .write.mode("overwrite")\
            .parquet(PARQUET_OUTPUT)
+
+total_cnt = sqlCtx.read.parquet(PARQUET_OUTPUT).count()
+print("Total number of public transactions: {}".format(total_cnt))

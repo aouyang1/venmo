@@ -40,21 +40,11 @@ spec:
               name: venmo-s3-bucket
               key: bucketname
         volumeMounts:
-        - name: logging-volume
-          mountPath: /var/tmp
-      - name: logger
-        image: busybox
-        command: ["/bin/tail", "-f", "/var/tmp/service.log"]
-        imagePullPolicy: Always
-        resources:
-          requests:
-            cpu: 50m
-            memory: 50Mi
-        volumeMounts:
-        - name: logging-volume
-          mountPath: /var/tmp
+        - name: logger-storage
+          mountPath: /var/log
       volumes:
-      - name: logging-volume
-        emptyDir: {}
+      - name: logger-storage
+        persistentVolumeClaim:
+          claimName: logger-claim
 
 

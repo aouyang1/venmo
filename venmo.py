@@ -14,8 +14,12 @@ import boto3
 
 FORMAT = '[%(asctime)-15s] - %(name)s - %(levelname)s - %(message)s'
 
+LOG_DIR = "/var/log/venmo-monster"
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
 logging.basicConfig(format=FORMAT,
-                    filename="/var/tmp/service.log",
+                    filename=os.path.join(LOG_DIR, "service.log"),
                     level=logging.INFO)
 logger = logging.getLogger('venmomonster')
 
