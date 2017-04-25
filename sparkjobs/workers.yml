@@ -2,7 +2,7 @@ purchase_type: on_demand
 subnet_id: subnet-3a78835f
 num_instances: 3
 key_name: austin-ouyang
-security_group_ids: sg-9206aaf7
+security_group_ids: sg-6242fc1a
 instance_type: m4.xlarge
 tag_name: ao-cluster
 vol_size: 100
